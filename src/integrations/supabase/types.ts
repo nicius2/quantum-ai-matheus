@@ -14,7 +14,111 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      controle_estoque: {
+        Row: {
+          created_at: string
+          data_referencia: string
+          id: string
+          id_produto: number
+          perda_peso: number | null
+          qtd_disponivel_hoje: number
+          qtd_em_descongelamento: number
+          qtd_retirar_hoje: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          data_referencia: string
+          id?: string
+          id_produto: number
+          perda_peso?: number | null
+          qtd_disponivel_hoje: number
+          qtd_em_descongelamento: number
+          qtd_retirar_hoje: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          data_referencia?: string
+          id?: string
+          id_produto?: number
+          perda_peso?: number | null
+          qtd_disponivel_hoje?: number
+          qtd_em_descongelamento?: number
+          qtd_retirar_hoje?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      previsoes: {
+        Row: {
+          created_at: string
+          data_previsao: string
+          demanda_prevista: number
+          id: string
+          id_produto: number
+          intervalo_confianca_inferior: number | null
+          intervalo_confianca_superior: number | null
+          mape: number | null
+          rmse: number | null
+        }
+        Insert: {
+          created_at?: string
+          data_previsao: string
+          demanda_prevista: number
+          id?: string
+          id_produto: number
+          intervalo_confianca_inferior?: number | null
+          intervalo_confianca_superior?: number | null
+          mape?: number | null
+          rmse?: number | null
+        }
+        Update: {
+          created_at?: string
+          data_previsao?: string
+          demanda_prevista?: number
+          id?: string
+          id_produto?: number
+          intervalo_confianca_inferior?: number | null
+          intervalo_confianca_superior?: number | null
+          mape?: number | null
+          rmse?: number | null
+        }
+        Relationships: []
+      }
+      vendas: {
+        Row: {
+          created_at: string
+          data_dia: string
+          feriado: boolean | null
+          id: string
+          id_produto: number
+          promocao: boolean | null
+          total_venda_dia_kg: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          data_dia: string
+          feriado?: boolean | null
+          id?: string
+          id_produto: number
+          promocao?: boolean | null
+          total_venda_dia_kg: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          data_dia?: string
+          feriado?: boolean | null
+          id?: string
+          id_produto?: number
+          promocao?: boolean | null
+          total_venda_dia_kg?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
